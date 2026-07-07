@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sara Moslemi | سارا مسلمی — مدرس دانشگاه</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&family=Vazirmatn:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF7F2;
+  --bg-warm:#F3EDE4;
+  --card:#FFFFFF;
+  --card-edge:#E8E0D4;
+  --navy:#1B2A4A;
+  --navy-soft:#2C3E5F;
+  --ink:#2D2A26;
+  --ink-dim:#6B6560;
+  --ink-faint:#9E9790;
+  --gold:#B8956A;
+  --gold-light:#D4B896;
+  --gold-pale:rgba(184,149,106,.1);
+  --sage:#7A9B8A;
+  --radius:12px;
+  --fa:'Vazirmatn', system-ui, sans-serif;
+  --en-display:'Playfair Display', Georgia, serif;
+  --en-body:'Inter', system-ui, sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--fa);
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.9;
+  overflow-x:hidden;
+}
+::selection{background:var(--gold);color:#fff}
+
+.en-text{font-family:var(--en-body);direction:ltr;text-align:left}
+.en-display{font-family:var(--en-display)}
+
+[data-lang="en"]{display:none}
+html[lang="en"] [data-lang="fa"]{display:none}
+html[lang="en"] [data-lang="en"]{display:block}
+html[lang="en"] .skills-wrap[data-lang="en"],
+html[lang="en"] .tags-wrap[data-lang="en"]{display:flex}
+html[lang="en"]{direction:ltr}
+html[lang="en"] body{font-family:var(--en-body)}
+html[lang="en"] .sec-eyebrow{direction:ltr}
+html[lang="en"] .tl-item{padding-right:0;padding-left:0}
+
+nav{
+  position:fixed;top:0;right:0;left:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px clamp(20px,5vw,64px);
+  background:rgba(250,247,242,.85);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--card-edge);
+  transition:transform .4s ease;
+}
+nav.hidden{transform:translateY(-100%)}
+.nav-name{font-weight:900;font-size:1rem;color:var(--navy)}
+.nav-right{display:flex;align-items:center;gap:20px}
+.nav-links{display:flex;gap:22px;list-style:none}
+.nav-links a{
+  color:var(--ink-dim);text-decoration:none;font-size:.84rem;font-weight:500;
+  transition:color .25s;
+}
+.nav-links a:hover{color:var(--gold)}
+.lang-btn{
+  font-family:var(--en-body);font-size:.78rem;font-weight:700;
+  background:var(--navy);color:#fff;border:none;border-radius:8px;
+  padding:7px 16px;cursor:pointer;transition:background .25s,transform .2s;
+  letter-spacing:.06em;
+}
+.lang-btn:hover{background:var(--gold);transform:translateY(-2px)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+@media(max-width:720px){.nav-links{display:none}}
+
+header{
+  position:relative;min-height:100svh;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(170deg,var(--navy) 0%,var(--navy-soft) 50%,#3D5478 100%);
+  overflow:hidden;
+}
+.hero-pattern{
+  position:absolute;inset:0;opacity:.06;
+  background-image:
+    repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(255,255,255,.3) 40px),
+    repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(255,255,255,.3) 40px);
+}
+.hero-inner{
+  position:relative;z-index:2;text-align:center;padding:100px 20px 80px;
+  max-width:800px;
+}
+.hero-photo{
+  width:180px;height:180px;border-radius:50%;
+  border:4px solid rgba(184,149,106,.6);
+  object-fit:cover;object-position:center top;
+  box-shadow:0 20px 60px -15px rgba(0,0,0,.5);
+  margin-bottom:30px;
+}
+.hero-name{
+  font-size:clamp(2.2rem,6vw,3.6rem);
+  font-weight:900;color:#fff;line-height:1.25;margin-bottom:8px;
+}
+html[lang="en"] .hero-name{font-family:var(--en-display)}
+.hero-title{
+  font-size:clamp(1rem,2.5vw,1.3rem);
+  color:var(--gold-light);font-weight:400;margin-bottom:10px;
+}
+.hero-location{font-size:.9rem;color:rgba(255,255,255,.55);margin-bottom:36px}
+.hero-summary{
+  color:rgba(255,255,255,.78);font-size:clamp(.92rem,2vw,1.05rem);
+  line-height:2;max-width:680px;margin:0 auto 40px;text-align:justify;
+}
+.hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{
+  font-family:var(--fa);font-size:.9rem;font-weight:700;
+  padding:12px 32px;border-radius:10px;cursor:pointer;text-decoration:none;
+  transition:transform .2s,box-shadow .25s;border:none;display:inline-block;
+}
+html[lang="en"] .btn{font-family:var(--en-body)}
+.btn-gold{background:var(--gold);color:#fff}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 12px 30px -8px rgba(184,149,106,.5)}
+.btn-outline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3)}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px)}
+
+main{max-width:960px;margin:0 auto;padding:0 clamp(20px,4vw,40px)}
+section{padding:80px 0 20px}
+.sec-head{margin-bottom:40px}
+.sec-eyebrow{
+  color:var(--gold);font-size:.76rem;font-weight:700;letter-spacing:.14em;
+  display:flex;align-items:center;gap:12px;margin-bottom:8px;
+}
+.sec-eyebrow::after{content:'';height:1px;flex:1;max-width:80px;background:var(--gold-light);opacity:.5}
+.sec-title{font-size:clamp(1.6rem,4vw,2.2rem);font-weight:900;color:var(--navy)}
+html[lang="en"] .sec-title{font-family:var(--en-display)}
+
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  *{animation:none!important;scroll-behavior:auto!important}
+}
+
+.edu-card{
+  background:var(--card);border:1px solid var(--card-edge);border-radius:var(--radius);
+  padding:30px;display:flex;gap:20px;align-items:flex-start;
+}
+.edu-icon{
+  width:52px;height:52px;border-radius:12px;
+  background:var(--gold-pale);display:flex;align-items:center;justify-content:center;
+  font-size:1.5rem;flex-shrink:0;color:var(--gold);
+}
+.edu-card .deg{font-weight:800;font-size:1.08rem;color:var(--navy)}
+.edu-card .uni{color:var(--ink-dim);font-size:.9rem}
+.edu-card .yr{color:var(--gold);font-size:.82rem;font-weight:700;margin-top:6px}
+
+.timeline{position:relative;padding-right:32px}
+html[lang="en"] .timeline{padding-right:0;padding-left:32px}
+.timeline::before{
+  content:'';position:absolute;right:7px;top:8px;bottom:8px;width:2px;
+  background:linear-gradient(var(--gold),var(--card-edge));border-radius:2px;opacity:.5;
+}
+html[lang="en"] .timeline::before{right:auto;left:7px}
+.tl-item{position:relative;padding-bottom:44px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{
+  content:'';position:absolute;right:-32px;top:10px;width:14px;height:14px;border-radius:50%;
+  background:var(--bg);border:3px solid var(--gold);
+  box-shadow:0 0 0 5px rgba(184,149,106,.12);
+}
+html[lang="en"] .tl-item::before{right:auto;left:-32px}
+.tl-date{font-size:.78rem;color:var(--gold);font-weight:700;margin-bottom:4px}
+.tl-role{font-size:1.15rem;font-weight:800;color:var(--navy)}
+html[lang="en"] .tl-role{font-family:var(--en-display);font-size:1.2rem}
+.tl-org{color:var(--ink-dim);font-size:.92rem;margin-bottom:8px}
+.tl-campus{font-size:.84rem;color:var(--ink-faint);margin-bottom:8px}
+.tl-list{list-style:none;display:grid;gap:6px}
+.tl-list li{
+  color:var(--ink-dim);font-size:.9rem;padding-right:18px;position:relative;text-align:justify;
+}
+html[lang="en"] .tl-list li{padding-right:0;padding-left:18px}
+.tl-list li::before{
+  content:'';position:absolute;right:0;top:11px;width:6px;height:6px;
+  border-radius:50%;background:var(--card-edge);
+}
+html[lang="en"] .tl-list li::before{right:auto;left:0}
+
+.achieve-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.ach{
+  background:var(--card);border:1px solid var(--card-edge);border-radius:var(--radius);
+  padding:24px;text-align:center;transition:transform .3s,box-shadow .3s;
+}
+.ach:hover{transform:translateY(-4px);box-shadow:0 12px 30px -10px rgba(0,0,0,.08)}
+.ach .num{font-size:2rem;font-weight:900;color:var(--gold);line-height:1}
+html[lang="en"] .ach .num{font-family:var(--en-display)}
+.ach .label{color:var(--ink-dim);font-size:.85rem;margin-top:6px}
+
+.skills-wrap{display:flex;flex-wrap:wrap;gap:10px}
+.chip{
+  background:var(--card);border:1px solid var(--card-edge);
+  border-radius:10px;padding:10px 20px;font-size:.88rem;font-weight:600;
+  color:var(--navy);transition:border-color .3s,transform .25s;cursor:default;
+}
+.chip:hover{border-color:var(--gold);transform:translateY(-3px)}
+.chip.accent{background:var(--gold-pale);border-color:rgba(184,149,106,.3);color:var(--gold)}
+
+.extra-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+.xcard{
+  background:var(--card);border:1px solid var(--card-edge);border-radius:var(--radius);padding:26px;
+}
+.xcard h4{
+  font-size:.95rem;font-weight:800;margin-bottom:14px;padding-bottom:10px;
+  border-bottom:1px solid var(--card-edge);color:var(--navy);
+}
+html[lang="en"] .xcard h4{font-family:var(--en-display);font-size:1rem}
+.xcard p,.xcard li{color:var(--ink-dim);font-size:.88rem}
+.xcard p{text-align:justify}
+.xcard ul{list-style:none;display:grid;gap:8px}
+.lang-bar{height:6px;border-radius:99px;background:var(--card-edge);margin-top:5px;overflow:hidden}
+.lang-bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--gold),var(--gold-light));
+  transform:scaleX(0);transform-origin:right;transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+html[lang="en"] .lang-bar i{transform-origin:left}
+.in .lang-bar i{transform:scaleX(var(--w))}
+
+.interests-list{display:flex;flex-wrap:wrap;gap:10px}
+.interest{
+  background:linear-gradient(135deg,var(--navy),var(--navy-soft));
+  color:rgba(255,255,255,.9);font-size:.82rem;font-weight:600;
+  padding:9px 20px;border-radius:99px;
+  transition:transform .25s;cursor:default;
+}
+.interest:hover{transform:translateY(-3px)}
+
+footer{
+  margin-top:80px;border-top:1px solid var(--card-edge);
+  background:var(--navy);text-align:center;padding:70px 20px 40px;
+}
+footer h2{font-size:clamp(1.5rem,4vw,2.1rem);font-weight:900;color:#fff;margin-bottom:10px}
+html[lang="en"] footer h2{font-family:var(--en-display)}
+footer .sub{color:rgba(255,255,255,.55);margin-bottom:30px;font-size:.95rem}
+.contact-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+.c-item{
+  display:flex;align-items:center;gap:10px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;
+  padding:12px 22px;color:#fff;text-decoration:none;font-size:.88rem;font-weight:600;
+  transition:border-color .3s,transform .25s,background .25s;
+}
+.c-item:hover{border-color:var(--gold);transform:translateY(-3px);background:rgba(255,255,255,.12)}
+.c-item .lbl{color:rgba(255,255,255,.45);font-size:.76rem;font-weight:500}
+.c-item .ltr{direction:ltr}
+.copy{color:rgba(255,255,255,.3);font-size:.76rem}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-name" data-lang="fa">سارا مسلمی</div>
+  <div class="nav-name en-display" data-lang="en" style="display:none">Sara Moslemi</div>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#about" data-lang="fa">درباره</a><a href="#about" data-lang="en" style="display:none">About</a></li>
+      <li><a href="#exp" data-lang="fa">سوابق</a><a href="#exp" data-lang="en" style="display:none">Experience</a></li>
+      <li><a href="#skills" data-lang="fa">مهارت‌ها</a><a href="#skills" data-lang="en" style="display:none">Skills</a></li>
+      <li><a href="#contact" data-lang="fa">تماس</a><a href="#contact" data-lang="en" style="display:none">Contact</a></li>
+    </ul>
+    <button class="lang-btn" id="langToggle" onclick="toggleLang()">EN</button>
+  </div>
+</nav>
+
+<header>
+  <div class="hero-pattern"></div>
+  <div class="hero-inner">
+    <img class="hero-photo" src="https://raw.githubusercontent.com/hsalimi79/sara-moslemi-resume/main/resume-photo.jpg" alt="Sara Moslemi">
+
+    <div data-lang="fa">
+      <h1 class="hero-name">سارا مسلمی</h1>
+      <p class="hero-title">مدرس دانشگاه و متخصص آموزش زبان انگلیسی (ELT)</p>
+      <p class="hero-location">بابل، مازندران، ایران</p>
+      <p class="hero-summary">مدرس دانشگاه و متخصص آموزش زبان انگلیسی با بیش از ۱۵ سال سابقه تدریس در دانشگاه‌ها و ۹ سال تجربه تدریس زبان انگلیسی به بزرگسالان در کانون زبان ایران. دارای تخصص در آموزش دانشجومحور، روش‌های نوین تدریس، طراحی و اجرای برنامه‌های آموزشی و ایجاد ارتباط مؤثر با دانشجویان. منتخب به‌عنوان مدرس نمونه و برخوردار از رضایت بالای دانشجویان در ارزیابی‌های آموزشی. علاقه‌مند به به‌کارگیری فناوری‌های آموزشی و هوش مصنوعی در آموزش زبان.</p>
+      <div class="hero-cta">
+        <a href="#exp" class="btn btn-gold">مشاهده سوابق</a>
+        <a href="#contact" class="btn btn-outline">اطلاعات تماس</a>
+      </div>
+    </div>
+
+    <div data-lang="en" style="display:none">
+      <h1 class="hero-name en-display">Sara Moslemi, M.A.</h1>
+      <p class="hero-title">English Language Lecturer &amp; ELT Specialist</p>
+      <p class="hero-location">Babol, Mazandaran, Iran</p>
+      <p class="hero-summary en-text">Experienced English Language Lecturer and ELT Specialist with over 15 years of university teaching experience and 9 years of teaching adult learners at the Iran Language Institute (ILI). Demonstrated excellence in learner-centered instruction, communicative language teaching, curriculum implementation, and student engagement. Recognized as an Outstanding Instructor with consistently high student evaluation scores. Passionate about integrating educational technology and Artificial Intelligence into language education.</p>
+      <div class="hero-cta">
+        <a href="#exp" class="btn btn-gold">View Experience</a>
+        <a href="#contact" class="btn btn-outline">Contact Info</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section id="about">
+    <div data-lang="fa">
+      <div class="sec-head rv">
+        <div class="sec-eyebrow">تحصیلات</div>
+        <h2 class="sec-title">مدرک تحصیلی</h2>
+      </div>
+      <div class="edu-card rv">
+        <div class="edu-icon">🎓</div>
+        <div>
+          <div class="deg">کارشناسی ارشد آموزش زبان انگلیسی (ELT)</div>
+          <div class="uni">دانشگاه پیام نور</div>
+          <div class="yr">سال فارغ‌التحصیلی: ۱۳۹۳</div>
+        </div>
+      </div>
+    </div>
+    <div data-lang="en" style="display:none">
+      <div class="sec-head rv">
+        <div class="sec-eyebrow en-text">EDUCATION</div>
+        <h2 class="sec-title">Academic Degree</h2>
+      </div>
+      <div class="edu-card rv">
+        <div class="edu-icon">🎓</div>
+        <div class="en-text">
+          <div class="deg">Master of Arts (M.A.) in English Language Teaching (ELT)</div>
+          <div class="uni">Payame Noor University, Iran</div>
+          <div class="yr">Graduated: 2014</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div data-lang="fa">
+      <div class="sec-head rv">
+        <div class="sec-eyebrow">دستاوردها</div>
+        <h2 class="sec-title">دستاوردهای حرفه‌ای</h2>
+      </div>
+      <div class="achieve-grid">
+        <div class="ach rv"><div class="num">+۱۵</div><div class="label">سال سابقه تدریس دانشگاهی</div></div>
+        <div class="ach rv"><div class="num">~۹</div><div class="label">سال تدریس در کانون زبان ایران</div></div>
+        <div class="ach rv"><div class="num">۲</div><div class="label">مقاله نمایه‌شده ISI</div></div>
+        <div class="ach rv"><div class="num">✦</div><div class="label">انتخاب به‌عنوان مدرس نمونه</div></div>
+      </div>
+    </div>
+    <div data-lang="en" style="display:none">
+      <div class="sec-head rv">
+        <div class="sec-eyebrow en-text">ACHIEVEMENTS</div>
+        <h2 class="sec-title">Professional Achievements</h2>
+      </div>
+      <div class="achieve-grid">
+        <div class="ach rv"><div class="num">15+</div><div class="label en-text">Years of University Teaching</div></div>
+        <div class="ach rv"><div class="num">~9</div><div class="label en-text">Years at Iran Language Institute</div></div>
+        <div class="ach rv"><div class="num">2</div><div class="label en-text">ISI-Indexed Publications</div></div>
+        <div class="ach rv"><div class="num">✦</div><div class="label en-text">Outstanding Instructor Award</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="exp">
+    <div data-lang="fa">
+      <div class="sec-head rv">
+        <div class="sec-eyebrow">تجربه</div>
+        <h2 class="sec-title">سوابق شغلی</h2>
+      </div>
+      <div class="timeline">
+        <div class="tl-item rv">
+          <div class="tl-date">۱۳۹۰ — ۱۴۰۲</div>
+          <div class="tl-role">مدرس دانشگاه</div>
+          <div class="tl-org">دانشگاه پیام نور</div>
+          <div class="tl-campus">واحدهای بابل، ساری، بهنمیر و قائم‌شهر</div>
+          <ul class="tl-list">
+            <li>تدریس دروس زبان انگلیسی در مقطع کارشناسی در چندین واحد دانشگاهی.</li>
+            <li>به‌کارگیری روش‌های نوین و دانشجومحور در آموزش.</li>
+            <li>طراحی فعالیت‌های آموزشی، آزمون‌ها و شیوه‌های ارزشیابی.</li>
+            <li>حمایت از پیشرفت تحصیلی و ارتقای مهارت‌های زبانی دانشجویان.</li>
+            <li>کسب رضایت بالای دانشجویان و دریافت ارزیابی‌های مثبت آموزشی.</li>
+            <li>ایجاد محیطی پویا، انگیزه‌بخش و تعاملی در کلاس.</li>
+          </ul>
+        </div>
+        <div class="tl-item rv">
+          <div class="tl-date">مدرس دانشگاه</div>
+          <div class="tl-role">مدرس دانشگاه</div>
+          <div class="tl-org">دانشگاه صنعتی نوشیروانی بابل</div>
+          <ul class="tl-list">
+            <li>تدریس دروس زبان انگلیسی برای دانشجویان مقطع کارشناسی.</li>
+            <li>تقویت مهارت‌های زبان انگلیسی عمومی و دانشگاهی دانشجویان.</li>
+            <li>طراحی محتوای آموزشی و آزمون‌ها.</li>
+            <li>حمایت از دانشجویان رشته‌های مختلف در یادگیری زبان.</li>
+          </ul>
+        </div>
+        <div class="tl-item rv">
+          <div class="tl-date">حدود ۹ سال سابقه</div>
+          <div class="tl-role">مدرس ارشد زبان انگلیسی</div>
+          <div class="tl-org">کانون زبان ایران — بخش بزرگسالان</div>
+          <ul class="tl-list">
+            <li>تدریس زبان انگلیسی از سطح مقدماتی تا پیشرفته.</li>
+            <li>استفاده از رویکرد آموزش ارتباطی (CLT).</li>
+            <li>تقویت مهارت مکالمه و توانایی برقراری ارتباط زبان‌آموزان.</li>
+            <li>ارزشیابی مستمر و ارائه بازخورد آموزشی.</li>
+            <li>برگزاری کلاس‌های تعاملی، انگیزه‌بخش و هدفمند.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div data-lang="en" style="display:none">
+      <div class="sec-head rv">
+        <div class="sec-eyebrow en-text">EXPERIENCE</div>
+        <h2 class="sec-title">Professional Experience</h2>
+      </div>
+      <div class="timeline">
+        <div class="tl-item rv">
+          <div class="tl-date en-text">2011 — 2023</div>
+          <div class="tl-role">University Lecturer</div>
+          <div class="tl-org en-text">Payame Noor University, Iran</div>
+          <div class="tl-campus en-text">Campuses: Babol, Sari, Behnamir, Qaemshahr</div>
+          <ul class="tl-list">
+            <li class="en-text">Taught undergraduate English language courses across multiple university campuses.</li>
+            <li class="en-text">Delivered communicative, learner-centered instruction.</li>
+            <li class="en-text">Designed classroom activities, examinations, and assessment materials.</li>
+            <li class="en-text">Supported students' academic achievement and language development.</li>
+            <li class="en-text">Maintained consistently high student satisfaction and positive course evaluations.</li>
+            <li class="en-text">Fostered an engaging, inclusive, and motivating classroom environment.</li>
+          </ul>
+        </div>
+        <div class="tl-item rv">
+          <div class="tl-date en-text">University Lecturer</div>
+          <div class="tl-role">University Lecturer</div>
+          <div class="tl-org en-text">Babol Noshirvani University of Technology</div>
+          <ul class="tl-list">
+            <li class="en-text">Taught English courses for undergraduate students.</li>
+            <li class="en-text">Enhanced students' academic English and communication skills.</li>
+            <li class="en-text">Prepared instructional materials and assessments.</li>
+            <li class="en-text">Supported learners from diverse academic disciplines.</li>
+          </ul>
+        </div>
+        <div class="tl-item rv">
+          <div class="tl-date en-text">Approximately 9 Years</div>
+          <div class="tl-role">Senior English Instructor</div>
+          <div class="tl-org en-text">Iran Language Institute (ILI) — Adult Department</div>
+          <ul class="tl-list">
+            <li class="en-text">Taught English to adult learners from elementary to advanced levels.</li>
+            <li class="en-text">Applied Communicative Language Teaching (CLT) methodologies.</li>
+            <li class="en-text">Developed learners' speaking fluency and communicative competence.</li>
+            <li class="en-text">Conducted continuous assessment and learner feedback.</li>
+            <li class="en-text">Created motivating and interactive classroom experiences.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div data-lang="fa">
+      <div class="sec-head rv">
+        <div class="sec-eyebrow">تخصص</div>
+        <h2 class="sec-title">مهارت‌های تخصصی</h2>
+      </div>
+      <div class="skills-wrap rv" data-lang="fa">
+        <span class="chip accent">آموزش زبان انگلیسی ELT</span>
+        <span class="chip accent">آموزش ارتباطی CLT</span>
+        <span class="chip accent">آموزش دانشگاهی EAP</span>
+        <span class="chip">آموزش بزرگسالان</span>
+        <span class="chip">تدریس در آموزش عالی</span>
+        <span class="chip">طراحی برنامه آموزشی</span>
+        <span class="chip">طراحی آزمون و ارزشیابی</span>
+        <span class="chip">مدیریت کلاس درس</span>
+        <span class="chip">ارتباطات علمی و دانشگاهی</span>
+        <span class="chip">سخنرانی و ارائه</span>
+        <span class="chip">آموزش آنلاین</span>
+        <span class="chip">تدریس از راه دور</span>
+        <span class="chip accent">هوش مصنوعی در آموزش</span>
+        <span class="chip">ChatGPT</span>
+        <span class="chip">Google Workspace</span>
+        <span class="chip">Microsoft Office</span>
+        <span class="chip">Zoom</span>
+        <span class="chip">Google Meet</span>
+      </div>
+    </div>
+    <div data-lang="en" style="display:none">
+      <div class="sec-head rv">
+        <div class="sec-eyebrow en-text">EXPERTISE</div>
+        <h2 class="sec-title">Core Competencies</h2>
+      </div>
+      <div class="skills-wrap rv en-text" data-lang="en" style="display:none">
+        <span class="chip accent">English Language Teaching (ELT)</span>
+        <span class="chip accent">Communicative Language Teaching (CLT)</span>
+        <span class="chip accent">English for Academic Purposes (EAP)</span>
+        <span class="chip">Adult Education</span>
+        <span class="chip">Higher Education Teaching</span>
+        <span class="chip">Curriculum Delivery</span>
+        <span class="chip">Student Assessment</span>
+        <span class="chip">Classroom Management</span>
+        <span class="chip">Academic Communication</span>
+        <span class="chip">Public Speaking</span>
+        <span class="chip">Online Teaching</span>
+        <span class="chip">Remote Instruction</span>
+        <span class="chip accent">AI-assisted Language Teaching</span>
+        <span class="chip">ChatGPT</span>
+        <span class="chip">Google Workspace</span>
+        <span class="chip">Microsoft Office Suite</span>
+        <span class="chip">Zoom</span>
+        <span class="chip">Google Meet</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div data-lang="fa">
+      <div class="sec-head rv">
+        <div class="sec-eyebrow">اطلاعات تکمیلی</div>
+        <h2 class="sec-title">زبان‌ها، نقاط قوت و علایق</h2>
+      </div>
+    </div>
+    <div data-lang="en" style="display:none">
+      <div class="sec-head rv">
+        <div class="sec-eyebrow en-text">MORE</div>
+        <h2 class="sec-title">Languages, Strengths &amp; Interests</h2>
+      </div>
+    </div>
+    <div class="extra-grid">
+
+      <div class="xcard rv">
+        <h4 data-lang="fa">زبان‌ها</h4>
+        <h4 data-lang="en" style="display:none">Languages</h4>
+        <ul>
+          <li data-lang="fa">فارسی — زبان مادری<div class="lang-bar"><i style="--w:1"></i></div></li>
+          <li data-lang="fa" style="margin-top:12px">انگلیسی — تسلط حرفه‌ای<div class="lang-bar"><i style="--w:.95"></i></div></li>
+          <li data-lang="fa" style="margin-top:12px">فرانسوی — سطح متوسط<div class="lang-bar"><i style="--w:.5"></i></div></li>
+          <li data-lang="en" style="display:none" class="en-text">Persian — Native<div class="lang-bar"><i style="--w:1"></i></div></li>
+          <li data-lang="en" style="display:none;margin-top:12px" class="en-text">English — Full Professional Proficiency<div class="lang-bar"><i style="--w:.95"></i></div></li>
+          <li data-lang="en" style="display:none;margin-top:12px" class="en-text">French — Intermediate<div class="lang-bar"><i style="--w:.5"></i></div></li>
+        </ul>
+      </div>
+
+      <div class="xcard rv">
+        <h4 data-lang="fa">نقاط قوت</h4>
+        <h4 data-lang="en" style="display:none">Strengths</h4>
+        <ul>
+          <li data-lang="fa">مهارت بالای ارتباط مؤثر با دانشجویان</li>
+          <li data-lang="fa">مدیریت حرفه‌ای کلاس</li>
+          <li data-lang="fa">انعطاف‌پذیری و رویکرد دانشجومحور</li>
+          <li data-lang="fa">علاقه‌مند به یادگیری مستمر</li>
+          <li data-lang="fa">روحیه همکاری و مسئولیت‌پذیری</li>
+          <li data-lang="en" style="display:none" class="en-text">Excellent interpersonal skills</li>
+          <li data-lang="en" style="display:none" class="en-text">Strong classroom leadership</li>
+          <li data-lang="en" style="display:none" class="en-text">Student-centered approach</li>
+          <li data-lang="en" style="display:none" class="en-text">Passion for lifelong learning</li>
+          <li data-lang="en" style="display:none" class="en-text">Collaborative work ethic</li>
+        </ul>
+      </div>
+
+      <div class="xcard rv">
+        <h4 data-lang="fa">علایق حرفه‌ای</h4>
+        <h4 data-lang="en" style="display:none">Professional Interests</h4>
+        <div class="interests-list" data-lang="fa">
+          <span class="interest">هوش مصنوعی در آموزش</span>
+          <span class="interest">فناوری‌های آموزشی</span>
+          <span class="interest">تربیت مدرس</span>
+          <span class="interest">آموزش آنلاین</span>
+          <span class="interest">طراحی برنامه درسی</span>
+          <span class="interest">سنجش و ارزیابی</span>
+        </div>
+        <div class="interests-list" data-lang="en" style="display:none">
+          <span class="interest">AI in Education</span>
+          <span class="interest">EdTech</span>
+          <span class="interest">Teacher Training</span>
+          <span class="interest">Online Learning</span>
+          <span class="interest">Curriculum Design</span>
+          <span class="interest">Assessment</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <div data-lang="fa">
+    <h2>اطلاعات تماس</h2>
+    <p class="sub">جهت همکاری در موقعیت‌های تدریس دانشگاهی، آموزش آنلاین یا دوره‌های تربیت مدرس، از طریق راه‌های زیر در دسترس هستم.</p>
+  </div>
+  <div data-lang="en" style="display:none">
+    <h2 class="en-display">Get in Touch</h2>
+    <p class="sub en-text">Available for university lecturer positions, online teaching, remote academic roles, and teacher training programs.</p>
+  </div>
+  <div class="contact-row">
+    <a class="c-item" href="mailto:your.email@email.com"><span class="lbl">Email</span><span class="ltr">your.email@email.com</span></a>
+    <a class="c-item" href="tel:+989120165664"><span class="lbl" data-lang="fa">تلفن</span><span class="lbl" data-lang="en" style="display:none">Phone</span><span class="ltr">0912 016 5664</span></a>
+    <a class="c-item" href="https://instagram.com/TheEnglishSpeakBoutique" target="_blank" rel="noopener"><span class="lbl">Instagram</span><span class="ltr">@TheEnglishSpeakBoutique</span></a>
+    <span class="c-item"><span class="lbl" data-lang="fa">موقعیت</span><span class="lbl" data-lang="en" style="display:none">Location</span><span data-lang="fa">بابل، مازندران</span><span data-lang="en" class="en-text" style="display:none">Babol, Iran</span></span>
+  </div>
+  <p class="copy" data-lang="fa">ساخته‌شده با 💙 — سارا مسلمی</p>
+  <p class="copy en-text" data-lang="en" style="display:none">Made with 💙 — Sara Moslemi</p>
+</footer>
+
+<script>
+function toggleLang(){
+  const html = document.documentElement;
+  const isFA = html.lang === 'fa';
+  html.lang = isFA ? 'en' : 'fa';
+  html.dir = isFA ? 'ltr' : 'rtl';
+  document.getElementById('langToggle').textContent = isFA ? 'فا' : 'EN';
+
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    if(el.dataset.lang === html.lang){
+      el.style.display = '';
+      if(el.classList.contains('skills-wrap') || el.classList.contains('interests-list')){
+        el.style.display = 'flex';
+      }
+    } else {
+      el.style.display = 'none';
+    }
+  });
+
+  document.querySelectorAll('.rv').forEach(el => {
+    el.classList.remove('in');
+    io.observe(el);
+  });
+}
+
+const io = new IntersectionObserver(es => {
+  es.forEach(e => {
+    if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+  });
+},{threshold:.14});
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+let lastY = 0;
+const nav = document.getElementById('nav');
+addEventListener('scroll', () => {
+  const y = scrollY;
+  nav.classList.toggle('hidden', y > lastY && y > 140);
+  lastY = y;
+},{passive:true});
+</script>
+</body>
+</html>
